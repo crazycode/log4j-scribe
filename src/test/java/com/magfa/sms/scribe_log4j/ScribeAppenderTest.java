@@ -31,4 +31,21 @@ public class ScribeAppenderTest {
 
         log.info("This is an exception", new RuntimeException("Should Print this one too!"));
     }
+
+    public void testLogger(long i) {
+        Logger log = Logger.getLogger("scribe");
+        log.debug("测试一下中文");
+        log.warn("收到" + i + "条信息");
+    }
+
+    @Test
+    public void testSpeed() {
+        long l1 = System.currentTimeMillis();
+        for (long l = 0; l < 100; l++) {
+            testLogger(l);
+        }
+        long l2 = System.currentTimeMillis();
+        System.out.println("时长：" + (l2 - l1) + "ms");
+    }
+
 }
