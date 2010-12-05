@@ -120,6 +120,7 @@ public class ScribeAppender extends DailyRollingFileAppender {
             System.out.println("connected to scribe server at: " + address);
 
         } catch (Throwable t) {
+            t.printStackTrace();
             System.err.println("Exception on trying to connect to scribe server at: " + address + ", reason: " + t.getMessage());
             connected = false;
         }
