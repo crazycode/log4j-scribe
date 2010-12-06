@@ -41,7 +41,7 @@ public class ScribeAppenderTest {
     @Test
     public void testSpeed() {
         long l1 = System.currentTimeMillis();
-        for (long l = 0; l < 100; l++) {
+        for (long l = 0; l < 10000; l++) {
             testLogger(l);
         }
         long l2 = System.currentTimeMillis();
